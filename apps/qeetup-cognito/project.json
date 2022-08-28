@@ -1,0 +1,83 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/qeetup-cognito/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/qeetup-cognito",
+        "index": "apps/qeetup-cognito/src/index.html",
+        "baseHref": "/",
+        "main": "apps/qeetup-cognito/src/main.tsx",
+        "polyfills": "apps/qeetup-cognito/src/polyfills.ts",
+        "tsConfig": "apps/qeetup-cognito/tsconfig.app.json",
+        "assets": [
+          "apps/qeetup-cognito/src/favicon.ico",
+          "apps/qeetup-cognito/src/assets"
+        ],
+        "styles": ["apps/qeetup-cognito/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/qeetup-cognito/src/environments/environment.ts",
+              "with": "apps/qeetup-cognito/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "qeetup-cognito:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "qeetup-cognito:build:development"
+        },
+        "production": {
+          "buildTarget": "qeetup-cognito:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/qeetup-cognito/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/qeetup-cognito"],
+      "options": {
+        "jestConfig": "apps/qeetup-cognito/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

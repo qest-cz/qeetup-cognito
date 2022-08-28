@@ -10,6 +10,41 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
+"@aws-cdk/cloud-assembly-schema@1.170.0":
+  version "1.170.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/cloud-assembly-schema/-/cloud-assembly-schema-1.170.0.tgz#a5c185e0c9ed7fb1b403e4d6bc6862e0f7da05dc"
+  integrity sha512-Sw1bSNVMOvcJymAQFBUZXHryYSpZxmTnVJDIu/ZobXbHpD+4kS6f+5MoMbG7QuS+yjUxoqOU79b5sj5o5BXhbQ==
+  dependencies:
+    jsonschema "^1.4.1"
+    semver "^7.3.7"
+
+"@aws-cdk/core@^1.170.0":
+  version "1.170.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/core/-/core-1.170.0.tgz#0c12c074208132de3a533655324ec8f6c0ada40c"
+  integrity sha512-KjQz+0TYzstf7avDJ3HP9qbyYRGSyfqPDLK/tBAa531ZDXlnSAyLhvHE8Oj+Vc1xtUfKs7wMb/dimi0sf6Ersg==
+  dependencies:
+    "@aws-cdk/cloud-assembly-schema" "1.170.0"
+    "@aws-cdk/cx-api" "1.170.0"
+    "@aws-cdk/region-info" "1.170.0"
+    "@balena/dockerignore" "^1.0.2"
+    constructs "^3.3.69"
+    fs-extra "^9.1.0"
+    ignore "^5.2.0"
+    minimatch "^3.1.2"
+
+"@aws-cdk/cx-api@1.170.0":
+  version "1.170.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/cx-api/-/cx-api-1.170.0.tgz#2d4b3d5167e43c27d369584e9662637d12672175"
+  integrity sha512-nhgX5kDdCDuzbvaSYM/NHUWEbzIs6PR4vR2nW3mIGXBbBtzKAtpwKzo4k/euSU7mj0TRqrnfMcRvNeq9nosOZQ==
+  dependencies:
+    "@aws-cdk/cloud-assembly-schema" "1.170.0"
+    semver "^7.3.7"
+
+"@aws-cdk/region-info@1.170.0":
+  version "1.170.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/region-info/-/region-info-1.170.0.tgz#b118c3072c6404541cae4c656778f287a66a52fc"
+  integrity sha512-Xs8cV6Xwm5udGFGJUoXepGoa1DaROHjjVC1kAR0lCtu75tQypW7v3Mj7ZTmGp5puBWwlpHX+zUR9NHB7XA+N3A==
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.16.7", "@babel/code-frame@^7.18.6":
   version "7.18.6"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.18.6.tgz#3b25d38c89600baa2dcc219edfa88a74eb2c427a"
@@ -1037,6 +1072,11 @@
     "@babel/helper-string-parser" "^7.18.10"
     "@babel/helper-validator-identifier" "^7.18.6"
     to-fast-properties "^2.0.0"
+
+"@balena/dockerignore@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@balena/dockerignore/-/dockerignore-1.0.2.tgz#9ffe4726915251e8eb69f44ef3547e0da2c03e0d"
+  integrity sha512-wMue2Sy4GAVTk6Ic4tJVcnfdau+gx2EnG7S+uAEe+TWJFqE4YoWN4/H8MSLj4eYJKxGg26lZwboEniNiNwZQ6Q==
 
 "@bcoe/v8-coverage@^0.2.3":
   version "0.2.3"
@@ -2838,6 +2878,13 @@ autoprefixer@^10.4.7:
     picocolors "^1.0.0"
     postcss-value-parser "^4.2.0"
 
+aws-cdk@^2.39.0:
+  version "2.39.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.39.0.tgz#9ba44544d97f7d114fc7a358fb17e0e414283ed0"
+  integrity sha512-qoezvJBLSLuUWioxVbxJU8n2BmZH05D9n/b9dgA6pcldchGK+xxvRzWNI2G/nmrT+l5AyPWxq7u0WbmOge6zrw==
+  optionalDependencies:
+    fsevents "2.3.2"
+
 aws-sign2@~0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
@@ -3477,6 +3524,11 @@ connect-history-api-fallback@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/connect-history-api-fallback/-/connect-history-api-fallback-2.0.0.tgz#647264845251a0daf25b97ce87834cace0f5f1c8"
   integrity sha512-U73+6lQFmfiNPrYbXqr6kZ1i1wiRqXnp2nhMsINseWXO8lDau0LGEffJ8kQi4EjLZympVgRdvqjAgiZ1tgzDDA==
+
+constructs@^3.3.69:
+  version "3.4.82"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.4.82.tgz#71b64dba3875fd01d0b24dda7aec27fb61b86b74"
+  integrity sha512-HEkfi347P8/BxAN6p7ui1IhSmhjKZtOEi5fZ0L4NKElEaqFox0JOA+YTDaPolWkJz6joDVvFD7VuMR/NMhlUDQ==
 
 content-disposition@0.5.4:
   version "0.5.4"
@@ -4855,7 +4907,7 @@ fs.realpath@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
 
-fsevents@^2.3.2, fsevents@~2.3.2:
+fsevents@2.3.2, fsevents@^2.3.2, fsevents@~2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
@@ -6217,6 +6269,11 @@ jsonfile@^6.0.1:
     universalify "^2.0.0"
   optionalDependencies:
     graceful-fs "^4.1.6"
+
+jsonschema@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/jsonschema/-/jsonschema-1.4.1.tgz#cc4c3f0077fb4542982973d8a083b6b34f482dab"
+  integrity sha512-S6cATIPVv1z0IlxdN+zUk5EPjkGCdnhN4wVSBlvoUO1tOLJootbo9CquNJmbIh4yikWHiUedhRYrNPn1arpEmQ==
 
 jsonwebtoken@^8.5.1:
   version "8.5.1"
@@ -8707,7 +8764,7 @@ ts-loader@^9.3.1:
     micromatch "^4.0.0"
     semver "^7.3.4"
 
-ts-node@10.9.1:
+ts-node@10.9.1, ts-node@^10.9.1:
   version "10.9.1"
   resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-10.9.1.tgz#e73de9102958af9e1f0b168a6ff320e25adcff4b"
   integrity sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==

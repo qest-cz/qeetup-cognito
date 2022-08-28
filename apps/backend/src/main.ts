@@ -25,6 +25,7 @@ const verifyUser = (req, res) => {
     throw new Error('Unauthorized 401')
   }
 
+  // curl https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_PsbjHfdX5/.well-known/jwks.json
   const jwk = ['TODO from cognito'] as any [] // TODO
   verifyToken(authorization, jwk)
 }

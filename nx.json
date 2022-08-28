@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "happyorg",
+  "npmScope": "qeetup-cognito",
   "affected": {
     "defaultBase": "main"
   },
@@ -40,5 +40,5 @@
       }
     }
   },
-  "defaultProject": "qeetup-cognito"
+  "defaultProject": "frontend"
 }

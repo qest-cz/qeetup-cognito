@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/qeetup-cognito/src",
+  "sourceRoot": "apps/frontend/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,17 +9,14 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/apps/qeetup-cognito",
-        "index": "apps/qeetup-cognito/src/index.html",
+        "outputPath": "dist/apps/frontend",
+        "index": "apps/frontend/src/index.html",
         "baseHref": "/",
-        "main": "apps/qeetup-cognito/src/main.tsx",
-        "polyfills": "apps/qeetup-cognito/src/polyfills.ts",
-        "tsConfig": "apps/qeetup-cognito/tsconfig.app.json",
-        "assets": [
-          "apps/qeetup-cognito/src/favicon.ico",
-          "apps/qeetup-cognito/src/assets"
-        ],
-        "styles": ["apps/qeetup-cognito/src/styles.css"],
+        "main": "apps/frontend/src/main.tsx",
+        "polyfills": "apps/frontend/src/polyfills.ts",
+        "tsConfig": "apps/frontend/tsconfig.app.json",
+        "assets": ["apps/frontend/src/favicon.ico", "apps/frontend/src/assets"],
+        "styles": ["apps/frontend/src/styles.css"],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
       },
@@ -33,8 +30,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/qeetup-cognito/src/environments/environment.ts",
-              "with": "apps/qeetup-cognito/src/environments/environment.prod.ts"
+              "replace": "apps/frontend/src/environments/environment.ts",
+              "with": "apps/frontend/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -50,15 +47,16 @@
       "executor": "@nrwl/web:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "qeetup-cognito:build",
-        "hmr": true
+        "buildTarget": "frontend:build",
+        "hmr": true,
+        "proxyConfig": "apps/frontend/proxy.conf.json"
       },
       "configurations": {
         "development": {
-          "buildTarget": "qeetup-cognito:build:development"
+          "buildTarget": "frontend:build:development"
         },
         "production": {
-          "buildTarget": "qeetup-cognito:build:production",
+          "buildTarget": "frontend:build:production",
           "hmr": false
         }
       }
@@ -67,14 +65,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/qeetup-cognito/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/frontend/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/qeetup-cognito"],
+      "outputs": ["coverage/apps/frontend"],
       "options": {
-        "jestConfig": "apps/qeetup-cognito/jest.config.ts",
+        "jestConfig": "apps/frontend/jest.config.ts",
         "passWithNoTests": true
       }
     }

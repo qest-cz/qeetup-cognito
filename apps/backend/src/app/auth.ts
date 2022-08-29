@@ -31,11 +31,11 @@ export type CognitoTokenPayload = {
 // TODo simplify with https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-tokens-verifying-a-jwt.html
 export const verifyToken = (idToken: string, jwks: JsonWebKey[]): CognitoTokenPayload => {
     const decodedToken = jwt.decode(idToken, { complete: true });
-
+    
     if (!decodedToken || !decodedToken.header) {
         throw new InvalidTokenError('Invalid token.');
     }
-
+    
     const jwk = jwks.find((key) => key.kid === decodedToken.header.kid);
     if (!jwk) {
         throw new NoUsableKeysFoundError('No usable key found in jwks');

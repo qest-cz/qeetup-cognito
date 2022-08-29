@@ -39,3 +39,4 @@ testem.log
 Thumbs.db
 
 cdk.out
+.env

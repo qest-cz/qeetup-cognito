@@ -37,9 +37,9 @@ export class QeetupUsers extends Construct {
             removalPolicy,
             userPoolName,
             customSenderKmsKey,
-            autoVerify: {
-                email: true,
-            },
+            // autoVerify: {
+            //     email: true,
+            // },
             passwordPolicy: {
                 minLength: 6,
                 requireDigits: false,
@@ -50,7 +50,7 @@ export class QeetupUsers extends Construct {
 
                 tempPasswordValidity: Duration.days(90),
             },
-            selfSignUpEnabled: false,
+            selfSignUpEnabled: true, // this should be enabled for sign-up flow
             signInAliases: {
                 email: true,
                 phone: false,

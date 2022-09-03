@@ -40,7 +40,7 @@ export const Dashboard = () => {
       </header>
       <main>
         {tickets.map(t => (
-          <p className="ticket flex" key={t.id}>
+          <p key={t.id}>
             {t.title}
           </p>
         ))}

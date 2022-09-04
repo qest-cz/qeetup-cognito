@@ -1,5 +1,5 @@
 // import path from 'path'
-import { AccountRecovery, UserPool, UserPoolClient } from '@aws-cdk/aws-cognito'
+import { AccountRecovery, UserPool, UserPoolClient, VerificationEmailStyle } from '@aws-cdk/aws-cognito'
 import { Construct, Duration, RemovalPolicy } from '@aws-cdk/core'
 import { Key } from '@aws-cdk/aws-kms'
 import { Effect, ManagedPolicy, PolicyStatement } from '@aws-cdk/aws-iam'
@@ -58,13 +58,20 @@ export class QeetupUsers extends Construct {
                 preferredUsername: false,
             },
             accountRecovery: AccountRecovery.EMAIL_ONLY,
+            userVerification: {
+                emailSubject: 'Verify your email for our awesome app!',
+                emailBody: 'Thanks for signing up to our awesome app! Your verification code is {##Verify Email##} ',
+                emailStyle: VerificationEmailStyle.LINK,
+                smsMessage: 'Thanks for signing up to our awesome app! Your verification code is {####} ',
+              },
         })
 
-        // userPool.addDomain('UserPoolDomain', {
-        //     cognitoDomain: {
-        //         domainPrefix: userPoolCognitoDomainPrefix,
-        //     },
-        // })
+        userPool.addDomain('UserPoolDomain', {
+            cognitoDomain: {
+                // domainPrefix: userPoolCognitoDomainPrefix,
+                domainPrefix: 'qeetup-example',
+            },
+        })
 
         const userPoolClient = new UserPoolClient(this, 'AdminUserPoolClient', {
             userPool,

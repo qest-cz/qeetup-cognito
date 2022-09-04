@@ -8,13 +8,13 @@ export const SetPassword = () => {
 
   const handleSubmit = async () => {
     try {
-      const email = 'aaa' // TODO fill from queryParams
-      const code = 'aaa' // TODO fill from queryParams
+      const email = 'rivexen690@otodir.com' // TODO fill from queryParams
+      const code = '657448' // TODO fill from queryParams
 
       // TODO test it
       await Auth.confirmSignUp(email, code);
       // await Auth.signIn(email, queryParams.auth)
-      await Auth.completeNewPassword(email, password)
+      // await Auth.completeNewPassword(email, password)
 
       navigate("/");
     } catch (e) {

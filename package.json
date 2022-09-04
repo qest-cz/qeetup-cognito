@@ -6,6 +6,7 @@
     "dev:frontend": "yarn nx serve frontend",
     "dev:backend": "yarn nx serve backend",
     "deploy": "cdk --app 'ts-node -T aws/bin/deploy-dev.ts' deploy 'QeetupCommon' --progress events --require-approval never",
+    "code:fix": "eslint --fix . && prettier --write .",
     "bootstrap:cdk": "cdk bootstrap",
     "start": "nx serve",
     "build": "nx build",

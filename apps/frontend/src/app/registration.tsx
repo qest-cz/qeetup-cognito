@@ -1,26 +1,27 @@
-import { useState } from "react";
-import { Auth } from "aws-amplify";
-import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import { Auth } from 'aws-amplify';
+import { useNavigate } from 'react-router-dom';
 
 export const Registration = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
     try {
       await Auth.signUp({ username: email, password });
-      navigate("/login");
+      navigate('/login');
     } catch (e) {
-      alert(e)
+      alert(e);
     }
-  }
+  };
 
   return (
     <div>
       <h1>Registration</h1>
       <div>
-        <label>Email:
+        <label>
+          Email:
           <input
             type="text"
             value={email}
@@ -29,7 +30,8 @@ export const Registration = () => {
         </label>
       </div>
       <div>
-        <label>Password:
+        <label>
+          Password:
           <input
             type="password"
             value={password}

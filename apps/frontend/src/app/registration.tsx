@@ -1,25 +1,14 @@
 import { useState } from "react";
-import Amplify, { Auth } from "aws-amplify";
+import { Auth } from "aws-amplify";
 import { useNavigate } from "react-router-dom";
-
-const env = process.env as any
-
-Amplify.configure({
-  Auth: {
-    region: env.NX_REGION,
-    userPoolId: env.NX_USER_POOL_ID,
-    userPoolWebClientId: env.NX_USER_POOL_CLIENT_ID,
-  },
-});
 
 export const Registration = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (event: any) => {
+  const handleSubmit = async () => {
     try {
-      event.preventDefault();
       await Auth.signUp({ username: email, password });
       navigate("/login");
     } catch (e) {
@@ -28,7 +17,7 @@ export const Registration = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
       <h1>Registration</h1>
       <div>
         <label>Email:
@@ -49,9 +38,9 @@ export const Registration = () => {
         </label>
       </div>
       <div>
-        <input type="submit" value="Submit" />
+        <button onClick={handleSubmit}>Submit</button>
       </div>
-    </form>
+    </div>
   );
 };
 

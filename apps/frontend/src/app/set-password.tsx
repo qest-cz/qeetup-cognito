@@ -1,24 +1,13 @@
 import { useState } from "react";
-import Amplify, { Auth } from "aws-amplify";
+import { Auth } from "aws-amplify";
 import { useNavigate } from "react-router-dom";
-
-const env = process.env as any
-
-Amplify.configure({
-  Auth: {
-    region: env.NX_REGION,
-    userPoolId: env.NX_USER_POOL_ID,
-    userPoolWebClientId: env.NX_USER_POOL_CLIENT_ID,
-  },
-});
 
 export const SetPassword = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (event: any) => {
+  const handleSubmit = async () => {
     try {
-      event.preventDefault();
       const email = 'aaa' // TODO fill from queryParams
       const code = 'aaa' // TODO fill from queryParams
 
@@ -34,7 +23,7 @@ export const SetPassword = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
       <h1>Confirm registration, create a new password</h1>
       <div>
         <label>Password:
@@ -46,9 +35,9 @@ export const SetPassword = () => {
         </label>
       </div>
       <div>
-        <input type="submit" value="Submit" />
+        <button onClick={handleSubmit}>Submit</button>
       </div>
-    </form>
+    </div>
   );
 };
 

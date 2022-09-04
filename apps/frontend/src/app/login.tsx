@@ -7,11 +7,10 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (event: any) => {
+  const handleSubmit = async () => {
     // aws cognito-idp admin-set-user-password --user-pool-id eu-west-1_PsbjHfdX5 --username sevipe7495@rxcay.com --password "sevipe7495@rxcay.com" --permanent
     // await Auth.signIn({ username: 'sevipe7495@rxcay.com', password: 'sevipe7495@rxcay.com' });
     try {
-      event.preventDefault();
       await Auth.signIn({ username: email, password });
       navigate("/");
     } catch (e) {
@@ -20,7 +19,7 @@ export const Login = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
       <h1>Login</h1>
       <div>
         <label>Email:
@@ -41,9 +40,12 @@ export const Login = () => {
         </label>
       </div>
       <div>
-        <input type="submit" value="Submit" />
+        <button onClick={handleSubmit}>Submit</button>
       </div>
-    </form>
+      <div>
+        <button onClick={() => navigate("/registration")}>Register</button>
+      </div>
+    </div>
   );
 };
 

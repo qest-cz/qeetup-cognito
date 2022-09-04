@@ -1,3 +1,4 @@
 # Qeetup cognito example app
 
-NX monorepo with simple exapmle of AWS Cognito usage written with React.js and Node.js, deployed by AWS CDK. 
+For JWKS get:
+curl https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_PsbjHfdX5/.well-known/jwks.json

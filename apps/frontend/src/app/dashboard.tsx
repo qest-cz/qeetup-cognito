@@ -11,7 +11,7 @@ type Ticket = {
 };
 
 export const Dashboard = () => {
-  const [tickets, setTickets] = useState<Ticket[]>([]);
+  const [todos, setTodos] = useState<Ticket[]>([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,9 +25,9 @@ export const Dashboard = () => {
         return navigate("/login");
       }
 
-      const response = await fetch('http://localhost:3333/api/tickets', { headers: { Authorization: `Bearer ${token}` } })
-      const tickets = await response.json()
-      setTickets(tickets)
+      const response = await fetch('http://localhost:3333/api/todos', { headers: { Authorization: `Bearer ${token}` } })
+      const todos = await response.json()
+      setTodos(todos)
     }
 
     fetchData().catch(console.error)
@@ -39,7 +39,7 @@ export const Dashboard = () => {
         <h1>Welcome to Qeetup!</h1>
       </header>
       <main>
-        {tickets.map(t => (
+        {todos.map(t => (
           <p key={t.id}>
             {t.title}
           </p>

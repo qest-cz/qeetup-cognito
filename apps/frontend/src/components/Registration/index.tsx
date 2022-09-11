@@ -17,11 +17,11 @@ export const Registration = () => {
   };
 
   return (
-    <div>
+    <main>
       <h1>Registration</h1>
       <div>
         <label>
-          Email:
+          <b>Email</b>
           <input
             type="text"
             value={email}
@@ -31,7 +31,7 @@ export const Registration = () => {
       </div>
       <div>
         <label>
-          Password:
+          <b>Password</b>
           <input
             type="password"
             value={password}
@@ -42,7 +42,7 @@ export const Registration = () => {
       <div>
         <button onClick={handleSubmit}>Submit</button>
       </div>
-    </div>
+    </main>
   );
 };
 

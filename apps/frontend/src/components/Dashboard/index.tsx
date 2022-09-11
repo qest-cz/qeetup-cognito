@@ -32,15 +32,15 @@ export const Dashboard = ({ token }: { token?: string}) => {
   }, []);
 
   return (
-    <div>
+    <main>
       <h1>Welcome to the Qeetup!</h1>
       <div>
-        <h3>My TODOs</h3>
+        <h2>My TODOs:</h2>
         {todos.map((t) => (
           <li key={t.id}>{t.title}</li>
         ))}
       </div>
-    </div>
+    </main>
   );
 };
 

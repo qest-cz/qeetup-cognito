@@ -17,11 +17,11 @@ export const Login = () => {
   };
 
   return (
-    <div>
+    <main>
       <h1>Login</h1>
       <div>
         <label>
-          Email:
+          <b>Email</b>
           <input
             type="text"
             value={email}
@@ -31,7 +31,7 @@ export const Login = () => {
       </div>
       <div>
         <label>
-          Password:
+          <b>Password</b>
           <input
             type="password"
             value={password}
@@ -43,9 +43,9 @@ export const Login = () => {
         <button onClick={handleSubmit}>Submit</button>
       </div>
       <div>
-        <button onClick={() => navigate('/registration')}>Register</button>
+        <button onClick={() => navigate('/registration')}>Registration</button>
       </div>
-    </div>
+    </main>
   );
 };
 

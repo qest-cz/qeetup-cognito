@@ -7,20 +7,24 @@ const app = express();
 const todos = [
   {
     id: 1,
-    title: 'Listen presentations',
+    title: 'Meet new people',
+  },
+  {
+    id: 2,
+    title: 'Eat pizza',
   },
   {
     title: 'Drink beer',
-    id: 2,
+    id: 3,
   },
 ];
 
-const ticketController = (req, res) => {
+const todoController = (req, res) => {
   res.send(todos);
 };
 
 app.use(cors());
-app.get('/api/todos', verifyUser, ticketController);
+app.get('/api/todos', verifyUser, todoController);
 
 const port = process.env.port || 3333;
 
